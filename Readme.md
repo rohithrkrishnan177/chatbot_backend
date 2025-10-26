@@ -9,7 +9,6 @@ A FastAPI-based backend that allows users to authenticate, upload PDF files, and
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/rohithrkrishnan177/chatbot_backend.git
-cd chatbot-backend
 ```
 
 ### 2️⃣ Create and Activate Virtual Environment
