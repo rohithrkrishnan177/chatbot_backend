@@ -8,7 +8,7 @@ A FastAPI-based backend that allows users to authenticate, upload PDF files, and
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/chatbot-backend.git
+git clone https://github.com/rohithrkrishnan177/chatbot_backend.git
 cd chatbot-backend
 ```
 
@@ -64,6 +64,24 @@ Access the app at 👉 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 - Lightweight and efficient for short document queries.
 - Easy integration using `httpx` without needing a heavy client library.
 - Good balance of speed and contextual understanding.
+- 1. Performance & Capabilities
+Mistral models are highly capable open-weight LLMs, competitive with other state-of-the-art models in reasoning, summarization, coding, and multi-turn conversations.
+They tend to be smaller and more efficient than some large proprietary models, which can reduce latency and cost while still maintaining high quality.
+
+2. Open-Weight Advantage
+Unlike closed LLMs, Mistral is open-weight. That means you can:
+Run it locally or on your own servers if needed.
+Fine-tune it for domain-specific tasks, e.g., PDFs in your chatbot backend.
+
+3. Hugging Face API Integration
+Using Hugging Face API makes it easy to integrate into existing pipelines without managing heavy infrastructure.
+You get automatic model updates and access to multiple Mistral variants (like Mistral 7B or Mixtral).
+
+4. Security & Customization
+Running via API allows controlled access and logging, which is safer than using some public LLM endpoints.
+Hugging Face allows token-based authentication, which fits well with your backend’s JWT authentication flow.
+
+
 
 ---
 
