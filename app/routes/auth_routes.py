@@ -8,7 +8,10 @@ from app.models.user_model import User
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 
-@router.post("/signup", response_model=TokenResponse)
+from fastapi import HTTPException
+from fastapi.responses import JSONResponse
+
+@router.post("/signup", response_model=dict)
 def signup(user_data: SignupRequest):
     if user_data.email in users_db:
         raise HTTPException(status_code=400, detail="Email already registered")
@@ -22,7 +25,13 @@ def signup(user_data: SignupRequest):
     hashed_pw = hash_password(user_data.password)
     users_db[user_data.email] = User(email=user_data.email, hashed_password=hashed_pw)
     token = create_access_token({"sub": user_data.email})
-    return {"access_token": token}
+
+    return {
+        "access_token": token,
+        "token_type": "bearer",
+        "message": "Signup successful! Welcome to our service."
+    }
+
 
 
 @router.post("/login", response_model=TokenResponse)
