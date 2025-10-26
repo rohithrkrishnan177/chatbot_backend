@@ -8,9 +8,6 @@ from app.models.user_model import User
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 
-from fastapi import HTTPException
-from fastapi.responses import JSONResponse
-
 @router.post("/signup", response_model=dict)
 def signup(user_data: SignupRequest):
     if user_data.email in users_db:
@@ -31,7 +28,6 @@ def signup(user_data: SignupRequest):
         "token_type": "bearer",
         "message": "Signup successful! Welcome to our service."
     }
-
 
 
 @router.post("/login", response_model=TokenResponse)
